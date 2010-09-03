@@ -50,7 +50,7 @@ class FoundationEngineerTestCase(unittest.TestCase):
     
     def test_linux(self):
         "You should have experience with Linux"
-        assert candidate.results['pinguins'] == 'yes'
+        assert candidate.results['penguins'] == 'yes'
     
     def test_database(self):
         "You should have experience with OS databases"
@@ -70,15 +70,11 @@ class FoundationEngineerTestCase(unittest.TestCase):
     
 
 
-        def prompt(question):
-            return raw_input("%s : " % question).strip()
+def prompt(question):
+    return raw_input("%s : " % question).strip()
 
-        def years_ago(number):
-            return date.today() - timedelta(days = number * 365)
-
-        def results_to_string(dictionary):
-            return '\n'.join(["%s: %s" % ("{0!r:50}".format(key), value) 
-                                for key,value in candidate.results.items()])
+def years_ago(number):
+    return date.today() - timedelta(days = number * 365)
 
 class Candidate(object):
 
@@ -116,8 +112,8 @@ class Candidate(object):
     def ask_appreciates_tests(self):
         return prompt("Do you like tests? (yes or no)")
 
-    def ask_pinguins(self):
-        return prompt("Are pinguins even remotely related to operating systems? (yes or no)")
+    def ask_penguins(self):
+        return prompt("Are penguins even remotely related to operating systems? (yes or no)")
 
     def ask_databases(self):
         return prompt("The following words \"Post Ogres Queue Elle\" are related (yes or no)")
